@@ -10,8 +10,6 @@ model = load_model('my_cnn_model.h5')  # Load your saved model
 
 @app.route('/', methods=['GET', 'POST'])
 
-# ... (rest of your code)
-
 def index():
     if request.method == 'POST':
         # Get the uploaded image
@@ -26,8 +24,8 @@ def index():
         test_image = image.img_to_array(test_image)
         test_image = np.expand_dims(test_image, axis=0)
 
-        # Preprocess the image (if needed)
-        # ...
+        # Image Pre Processing
+        # ... 
 
         # Make prediction
         prediction = model.predict(test_image)
